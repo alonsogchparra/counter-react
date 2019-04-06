@@ -4,6 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import CounterControl from '../../components/CounterControl/CounterControl';
@@ -21,13 +25,49 @@ const styles = theme => ({
   },
   button: {
     marginTop: theme.spacing.unit * 4
-  }
+  },
+  list: {
+    listStyle: 'none',
+    marginTop: theme.spacing.unit * 4,
+    marginLeft: '0',
+    marginRight: '0',
+    padding: '0'
+  },
+  listItem: {
+    display: 'inline-block',
+    width: '20%',
+    marginLeft: '1.5%',
+    marginRight: '1.5%',
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    cursor: 'pointer'
+  },
 });
 
 class Counter extends Component {
   render () {
 
     const {classes} = this.props;
+
+    let showResult = (
+      this.props.results.map(result => (
+        <li className={classes.listItem} key={result.id} onClick={() => {this.props.onDeleteResult(result.id)}}>
+          <Card>
+            <CardContent>
+              <Typography>
+                {result.value}
+              </Typography>
+            </CardContent>
+          </Card>
+        </li>
+      ))
+    );
+
+    if (this.props.loading) {
+      showResult = (
+        <CircularProgress />
+      );
+    }
 
     return (
       <div>
@@ -90,10 +130,8 @@ class Counter extends Component {
 
         </div>
 
-        <ul>
-          {this.props.results.map(result => (
-            <li key={result.id} onClick={() => this.props.onDeleteResult(result.id)}>{result.value}</li>
-            ))}
+        <ul className={classes.list}>
+          {showResult}
         </ul>
 
       </div>
@@ -104,7 +142,8 @@ class Counter extends Component {
 const mapStateToProps = state => {
   return {
     counter: state.ctr.counter,
-    results: state.res.results
+    results: state.res.results,
+    loading: state.res.loading
   }
 };
 
