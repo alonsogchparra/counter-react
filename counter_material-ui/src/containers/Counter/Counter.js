@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
+import CounterOutput from '../../components/CounterOutput/CounterOutput';
+
 class Counter extends Component {
   render () {
     return (
       <div>
-        <div>Counter</div>
-        <div>CounterOutput</div>
+        <CounterOutput />
         <div>CounterControl</div>
         <div>CounterControl</div>
         <div>CounterControl</div>
