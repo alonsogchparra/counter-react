@@ -7,9 +7,11 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import counterReducer from './store/reducers/counter';
+import resultReducer from './store/reducers/result';
 
 const rootReducer = combineReducers({
-  ctr: counterReducer
+  ctr: counterReducer,
+  res: resultReducer
 });
 
 const logger = store => {
