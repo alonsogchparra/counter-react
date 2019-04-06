@@ -8,6 +8,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Zoom from '@material-ui/core/Zoom';
+import Slide from '@material-ui/core/Slide';
 
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import CounterControl from '../../components/CounterControl/CounterControl';
@@ -57,13 +59,15 @@ class Counter extends Component {
     let showResult = (
       this.props.results.map(result => (
         <li className={classes.listItem} key={result.id} onClick={() => {this.props.onDeleteResult(result.id)}}>
-          <Card>
-            <CardContent>
-              <Typography>
-                {result.value}
-              </Typography>
-            </CardContent>
-          </Card>
+          <Zoom in={this.state.activate} timeout={500}>
+            <Card>
+              <CardContent>
+                <Typography>
+                  {result.value}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Zoom>
         </li>
       ))
     );
@@ -81,62 +85,64 @@ class Counter extends Component {
           activated={this.state.activate}
         />
 
-        <div className={classes.root}>
+        <Slide direction="up" in={this.state.activate} timeout={1000}>
 
-          <Grid container justify="center" direction="row">
+          <div className={classes.root}>
 
-            <Paper className={classes.paper}>
+            <Grid container justify="center" direction="row">
 
-              <Grid container justify="center" direction="row">
+              <Paper className={classes.paper}>
 
-                <Grid item xs={12} md={3}>
-                  <CounterControl
-                    label="Increment"
-                    clicked={this.props.onIncrementCounter}
-                  />
+                <Grid container justify="center" direction="row">
+
+                  <Grid item xs={12} md={3}>
+                    <CounterControl
+                      label="Increment"
+                      clicked={this.props.onIncrementCounter}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} md={3}>
+                    <CounterControl
+                      label="Decrement"
+                      clicked={this.props.onDecrementCounter}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} md={3}>
+                    <CounterControl
+                      label="Add"
+                      clicked={this.props.onAddCounter}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} md={3}>
+                    <CounterControl
+                      label="Subtract"
+                      clicked={this.props.onSubtractCounter}
+                    />
+                  </Grid>
+
                 </Grid>
 
-                <Grid item xs={12} md={3}>
-                  <CounterControl
-                    label="Decrement"
-                    clicked={this.props.onDecrementCounter}
-                  />
-                </Grid>
+              </Paper>
 
-                <Grid item xs={12} md={3}>
-                  <CounterControl
-                    label="Add"
-                    clicked={this.props.onAddCounter}
-                  />
-                </Grid>
+            </Grid>
 
-                <Grid item xs={12} md={3}>
-                  <CounterControl
-                    label="Subtract"
-                    clicked={this.props.onSubtractCounter}
-                  />
-                </Grid>
+            <div className={classes.button}>
+              <Button
+                onClick={() => this.props.onStoreResult(this.props.counter)}
+                size="large"
+                color="primary"
+                variant="contained"
+              >
+              Show Result
+              </Button>
+            </div>
 
-              </Grid>
-
-            </Paper>
-
-          </Grid>
-
-          <div className={classes.button}>
-            <Button
-              onClick={() => this.props.onStoreResult(this.props.counter)}
-              size="large"
-              color="primary"
-              variant="contained"
-            >
-            Show Result
-            </Button>
           </div>
 
-
-
-        </div>
+        </Slide>
 
         <ul className={classes.list}>
           {showResult}
