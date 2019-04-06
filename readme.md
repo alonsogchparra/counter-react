@@ -20,3 +20,8 @@ Subtract (-15)
 This project is inspired on the Udemy Course [React - The Complete Guide (incl Hooks, React Router, Redux) by Maximilian Schwarzmüller](https://www.udemy.com/react-the-complete-guide-incl-redux/) I learned a lot! from this course, if you have the opportunity to do it. I recommend it!
 
 On the projects I will use [Yarn](https://yarnpkg.com/lang/en/) to add and install dependencies. If you don't want to use yarn, not problem, feel free to use [NPM](https://www.npmjs.com/) for adding or installing dependencies.
+
+I will start creating the project with
+```
+create-react-app name_project
+```
