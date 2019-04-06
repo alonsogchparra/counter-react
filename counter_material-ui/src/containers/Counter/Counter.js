@@ -45,6 +45,11 @@ const styles = theme => ({
 });
 
 class Counter extends Component {
+
+  state = {
+    activate: true
+  };
+
   render () {
 
     const {classes} = this.props;
@@ -71,7 +76,10 @@ class Counter extends Component {
 
     return (
       <div>
-        <CounterOutput value={this.props.counter} />
+        <CounterOutput
+          value={this.props.counter}
+          activated={this.state.activate}
+        />
 
         <div className={classes.root}>
 
