@@ -9,6 +9,7 @@ import App from './App';
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
 import * as serviceWorker from './serviceWorker';
+import 'semantic-ui-css/semantic.min.css';
 
 const rootReducer = combineReducers({
   ctr: counterReducer,
