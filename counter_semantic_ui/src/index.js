@@ -7,10 +7,12 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import counterReducer from './store/reducers/counter';
+import resultReducer from './store/reducers/result';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
-  ctr: counterReducer
+  ctr: counterReducer,
+  res: resultReducer
 });
 
 const logger = store => {
