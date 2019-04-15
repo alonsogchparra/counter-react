@@ -1,9 +1,14 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 
 const counterControl = (props) => (
-  <div onClick={props.clicked}>
+  <Button
+    basic
+    inverted
+    onClick={props.clicked}
+  >
     {props.label}
-  </div>
+  </Button>
 );
 
 export default counterControl;
