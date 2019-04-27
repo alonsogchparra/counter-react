@@ -5,3 +5,6 @@ export const SUBTRACT = 'SUBTRACT';
 
 export const STORE_RESULT = 'STORE_RESULT';
 export const DELETE_RESULT = 'DELETE_RESULT';
+
+export const LOADING_RESULT = 'LOADING_RESULT';
+export const UPDATE_PROGRESS_BAR = 'UPDATE_PROGRESS_BAR';
