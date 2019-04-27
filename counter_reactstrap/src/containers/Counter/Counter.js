@@ -4,9 +4,24 @@ import { Button } from 'reactstrap';
 
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import CounterConsole from '../../components/CounterConsole/CounterConsole';
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import ShowResult from '../../components/ShowResult/ShowResult';
 import * as actionCreator from '../../store/actions';
 
 class Counter extends Component {
+
+  progressBarValue = () => {
+    this.props.onStoreResult(this.props.counter);
+    let pbar = this.props.progressBar;
+    return setInterval(() => {
+      if (pbar < 100) {
+        pbar++;
+        console.log('pbar:', pbar);
+        this.props.onUpdateProgressBar(pbar);
+      }
+    }, 10);
+  }
+
   render () {
     return (
       <div>
@@ -20,9 +35,9 @@ class Counter extends Component {
           subtracted={this.props.onSubtractCounter}
         />
 
-        <div className="my-2">
+        <div className="my-3">
           <Button
-            onClick={() => this.props.onStoreResult(this.props.counter)}
+            onClick={() => this.progressBarValue()}
             color='success'
             size='lg'
           >
@@ -30,11 +45,14 @@ class Counter extends Component {
           </Button>
         </div>
 
-        <ul>
-          {this.props.results.map(result => (
-            <li key={result.id} onClick={() => this.props.onDeleteResult(result.id)}>{result.value}</li>
-          ))}
-        </ul>
+        {this.props.loading ?
+          <ProgressBar progressBar={this.props.progressBar} /> :
+          <ShowResult
+            results={this.props.results}
+            deleteById={this.props.onDeleteResult}
+          />
+        }
+
       </div>
     )
   }
@@ -43,7 +61,9 @@ class Counter extends Component {
 const mapStateToProps = state => {
   return {
     counter: state.ctr.counter,
-    results: state.res.results
+    results: state.res.results,
+    loading: state.res.loading,
+    progressBar: state.res.progressBar
   }
 };
 
@@ -54,7 +74,8 @@ const mapDispatchToProps = dispatch => {
     onAddCounter: () => dispatch (actionCreator.add(10)),
     onSubtractCounter: () => dispatch (actionCreator.subtract(15)),
     onStoreResult: (result) => dispatch (actionCreator.storeResult(result)),
-    onDeleteResult: (id) => dispatch (actionCreator.deleteResult(id))
+    onDeleteResult: (id) => dispatch (actionCreator.deleteResult(id)),
+    onUpdateProgressBar: (pbar) => dispatch (actionCreator.updateProgressBar(pbar))
   }
 };
 
