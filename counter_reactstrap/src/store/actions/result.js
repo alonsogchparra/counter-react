@@ -3,7 +3,9 @@ import * as actionTypes from './actionTypes';
 export const saveResult = res => {
   return {
     type: actionTypes.STORE_RESULT,
-    result: res
+    result: res,
+    loading: false,
+    progressBar: 0
   }
 };
 
@@ -14,10 +16,27 @@ export const deleteResult = resId => {
   }
 };
 
+export const loadingResult = () => {
+  return {
+    type: actionTypes.LOADING_RESULT,
+    loading: true
+  }
+}
+
+export const updateProgressBar = progressBar => {
+  return {
+    type: actionTypes.UPDATE_PROGRESS_BAR,
+    progressBar
+  }
+}
+
 export const storeResult = result => {
   return dispatch => {
     setTimeout(() => {
-      dispatch (saveResult(result));
-    }, 2000);
+      dispatch (loadingResult());
+      setTimeout(() => {
+        dispatch (saveResult(result));
+      }, 2000)
+    }, 0);
   }
 }

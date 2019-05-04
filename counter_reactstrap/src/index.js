@@ -5,6 +5,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
