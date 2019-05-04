@@ -7,5 +7,7 @@ export {
 
 export {
   deleteResult,
-  storeResult
+  storeResult,
+  loadingResult,
+  updateProgressBar
 } from './result';
