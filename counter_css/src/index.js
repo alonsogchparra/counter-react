@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
+import counterReducer from './store/reducers/counter';
+import resultReducer from './store/reducers/result';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  ctr: counterReducer,
+  res: resultReducer
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
