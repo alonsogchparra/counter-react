@@ -5,6 +5,8 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import CounterConsole from '../../components/CounterConsole/CounterConsole';
 import * as actions from '../../store/actions';
 
+import './Counter.css';
+
 class Counter extends Component {
   render () {
     return (
@@ -19,12 +21,25 @@ class Counter extends Component {
         />
 
         <div>
-          <button onClick={() => this.props.onStoreResult(this.props.counter)}>Show Result</button>
+          <button
+            className="counter--btn_result"
+            onClick={() => this.props.onStoreResult(this.props.counter)}>Show Result</button>
         </div>
 
 
         <ul>
-          {this.props.results.map(result => <li key={result.id} onClick={() => this.props.onDeleteResult(result.id)}>{result.value}</li>)}
+          {this.props.results.map(result =>
+            <li key={result.id}>
+              {result.value}
+              <div>
+                <button
+                  className="counter--btn_delete"
+                  onClick={() => this.props.onDeleteResult(result.id)}>
+                  Delete
+                </button>
+              </div>
+            </li>
+          )}
         </ul>
 
       </div>
