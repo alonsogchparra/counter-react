@@ -1,0 +1,74 @@
+.counter_control--content {
+  width: 80%;
+  margin: auto;
+}
+
+.counter_control--btn {
+  background-color: #ff711f;
+  font-family: inherit;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  width: 100%;
+  margin: 1rem auto;
+  box-shadow: 0px 4px 4px 0px #cccccc;
+  position: relative;
+}
+
+.counter_control--btn:hover {
+  background-color: #ff5100;
+  color: black;
+}
+
+.counter_control--btn:focus {
+  outline: none;
+}
+
+.counter_control--tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: .4rem;
+  padding: 0.3rem 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 30%;
+  margin: auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: .8rem;
+}
+
+.counter_control--tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.counter_control--btn:hover .counter_control--tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: 40rem) {
+
+  .counter_control--content {
+    width: 20%;
+    display: inline-block;
+    margin: 1rem 1rem;
+  }
+
+  .counter_control--btn {
+    display: inline-block;
+    margin: .5rem;
+  }
+
+}
