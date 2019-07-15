@@ -1,17 +1,17 @@
 .counter--btn_result {
-  background-color: #04c434;
-  color: white;
+  background-color: var(--ctr-bg);
+  color: var(--ctr-color);
   border: none;
   padding: 1.2rem;
   width: 80%;
   font-size: 1.8rem;
   font-family: inherit;
-  box-shadow: 0px 4px 4px 0px #ccc;
+  box-shadow: 0px 4px 4px 0px var(--ctr-shadow);
 }
 
 .counter--btn_result:hover {
-  background-color: #00ff40;
-  color: black;
+  background-color: var(--ctr-bg-hover);
+  color: var(--ctr-color-hover);
 }
 
 .counter--btn_result:focus {
@@ -27,11 +27,13 @@ ul {
 }
 
 li {
-  border: 1px solid #ccc;
+  border: 1px solid var(--ctr-shadow);
   width: 72%;
   margin: 1rem auto;
   font-size: 2rem;
   padding: 1rem;
+  background-color: var(--ctr-item-bg);
+  color: var(--ctr-item-color);
 }
 
 .counter--btn_delete {

@@ -1,7 +1,7 @@
 .counter_output {
-  background-color: #ff711f;
-  color: white;
+  background-color: var(--ctr-output-bg);
+  color: var(--ctr-output-color);
   padding: .5rem;
-  box-shadow: 2px 2px 2px 2px #cccccc;
+  box-shadow: 2px 2px 2px 2px var(--ctr-output-shadow);
   margin-bottom: 1.5rem;
 }

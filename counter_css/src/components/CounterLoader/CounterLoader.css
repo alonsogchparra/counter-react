@@ -10,7 +10,7 @@
   animation: load7 1.8s infinite ease-in-out;
 }
 .loader {
-  color: #ff711f;
+  color: var(--ctr-loader-spinner);
   font-size: 10px;
   margin: 80px auto;
   position: relative;
