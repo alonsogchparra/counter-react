@@ -1,0 +1,6 @@
+.counter_console--container {
+  width: 100%;
+  /* display: block; */
+  /* display: inline-block; */
+  position: relative;
+}
