@@ -1,10 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap');
+
+.dark {
+
+  /* Body */
+  --body-bg: #1d1d1d;
+
+  /* Counter Theme */
+  --ctr-theme-bg: #fffb00;
+  --ctr-theme-color: #1d1d1d;
+  --ctr-theme-bg-inverted:#04c434;
+  --ctr-theme-color-inverted: white;
+
+  /* Counter Output */
+  --ctr-output-bg: #1fadff;
+  --ctr-output-color: #1d1d1d;
+  --ctr-output-shadow: #464646;
+
+  /* Counter Control */
+  --ctr-control-btn-bg: #1fadff;
+  --ctr-control-btn-color: black;
+  --ctr-control-btn-bg-hover: #0084ff;
+  --ctr-control-btn-color-hover: white;
+  --ctr-control-shadow: #464646;
+  --ctr-control-tooltip-bg: #c0c0c0;
+  --ctr-control-tooltip-color: #1d1d1d;
+
+  /* Counter Loader */
+  --ctr-loader-spinner: #1fadff;
+
+  /* Counter */
+  --ctr-bg: #c40494;
+  --ctr-color: black;
+  --ctr-item-bg:#838383;
+  --ctr-item-color: black;
+  --ctr-shadow: #464646;
+  --ctr-bg-hover: #ff00bf;
+  --ctr-color-hover:white;
+
+}
+
+.default {
+
+  /* Body */
+  --body-bg: #ffffff;
+
+  /* Counter Theme */
+  --ctr-theme-bg: #04c434;
+  --ctr-theme-color: white;
+  --ctr-theme-bg-inverted:#fffb00;
+  --ctr-theme-color-inverted: #1d1d1d;
+
+  /* Counter Output */
+  --ctr-output-bg: #ff711f;
+  --ctr-output-color: white;
+  --ctr-output-shadow: #cccccc;
+
+  /* Counter Control */
+  --ctr-control-btn-bg: #ff711f;
+  --ctr-control-btn-color: white;
+  --ctr-control-btn-bg-hover: #ff5100;
+  --ctr-control-btn-color-hover: black;
+  --ctr-control-shadow: #cccccc;
+  --ctr-control-tooltip-bg: #555;
+  --ctr-control-tooltip-color: white;
+
+  /* Counter Loader */
+  --ctr-loader-spinner: #ff711f;
+
+  /* Counter */
+  --ctr-bg: #04c434;
+  --ctr-color: white;
+  --ctr-item-bg:#838383;
+  --ctr-item-color: white;
+  --ctr-shadow: #cccccc;
+  --ctr-bg-hover: #00ff40;
+  --ctr-color-hover:black;
+
+}
+
+html {
+  height: 100vh;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body-bg);
 }
 
 code {

@@ -1,0 +1,24 @@
+.counter_theme--container {
+  padding: 1rem;
+  background-color: var(--ctr-theme-bg);
+}
+
+.counter_theme--btn {
+  background-color: var(--ctr-theme-bg);
+  color: var(--ctr-theme-color);
+  border: .2rem solid var(--ctr-theme-color);
+  padding: .5rem 1.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.counter_theme--btn:hover {
+  background-color: var(--ctr-theme-bg-inverted);
+  color: var(--ctr-theme-color-inverted);
+  border: .2rem solid var(--ctr-theme-color-inverted);
+}
+
+.counter_theme--btn:focus {
+  outline: none;
+}
