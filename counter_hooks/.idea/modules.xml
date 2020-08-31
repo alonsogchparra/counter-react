@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/counter_hooks.iml" filepath="$PROJECT_DIR$/.idea/counter_hooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../hooks/redux_hooks/.idea/redux_hooks.iml" filepath="$PROJECT_DIR$/../../../../hooks/redux_hooks/.idea/redux_hooks.iml" />
+    </modules>
+  </component>
+</project>
