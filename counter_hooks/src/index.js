@@ -6,6 +6,7 @@ import rootReducer  from './store/reducers';
 import thunk from "redux-thunk";
 import './index.css';
 import App from './App';
+import "antd/dist/antd.css";
 import * as serviceWorker from './serviceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
